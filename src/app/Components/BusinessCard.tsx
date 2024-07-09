@@ -14,9 +14,11 @@ const BusinessCard: React.FC = () => {
       <div className="text-center">
         <h2 className="text-xl font-semibold text-gray-800">Sakari Järvelä</h2>
         <p className="text-gray-600">Software Designer</p>
+		<p className="text-gray-600">Master of Science</p>
+		<p className="text-gray-600">Software Development Engineer</p>
         <p className="text-gray-600">sjarvela89@hotmail.com</p>
 		<div className="mt-4"></div>
-        <p className="text-gray-600">React Native, React.js, TypeScript, JavaScript, C#, C++, C, SQL, Android, Angular, Windows, Linux, CSS, HTML, Next.js</p>
+        <p className="text-gray-600">React Native, React.js, TypeScript, JavaScript, C#, C++, C, SQL, Android, Angular, Windows, Linux, CSS, HTML</p>
       </div>
     </div>
   );
