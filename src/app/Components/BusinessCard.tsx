@@ -8,7 +8,7 @@ const BusinessCard: React.FC = () => {
         <img 
           src="/images/sj.jpg" 
           alt="Profiili kuva" 
-          className="w-24 h-24 rounded-full border-4 bo	rder-gray-700" 
+          className="rounded-full border-4 bo	rder-gray-700" 
         />
       </div>
       <div className="text-center">
