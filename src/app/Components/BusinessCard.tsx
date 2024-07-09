@@ -2,7 +2,7 @@ import React from 'react';
 
 const BusinessCard: React.FC = () => {
   return (
-    <div className="relative max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden p-6 z10 opacity-70">
+    <div className="relative max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden p-6 z10 opacity-80">
       {/* Profile Image */}
       <div className="flex justify-center mb-4">
         <img 
