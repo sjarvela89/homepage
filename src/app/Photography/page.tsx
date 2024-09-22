@@ -56,7 +56,7 @@ const Photography: React.FC = () => {
               key={item.id}
               className={styles.imageThumbnail}
               onClick={() => {
-                setSelectedImage(item.source);
+                setSelectedImage(item.source.src);
                 setRotation(0); // Reset rotation when a new image is selected
               }}
             >
