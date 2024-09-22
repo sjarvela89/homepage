@@ -1,4 +1,4 @@
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ChartOptions } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { weights, averageLine } from '../tables/DogWeightData';
 
@@ -28,7 +28,7 @@ export const chartData = {
   ],
 };
 
-export const chartConfig = {
+export const chartConfig: ChartOptions<'line'> = {
   responsive: true, // Ensure the chart resizes with the screen
   maintainAspectRatio: false, // Allow dynamic sizing
   plugins: {
