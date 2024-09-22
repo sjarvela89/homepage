@@ -26,8 +26,6 @@ const Dog = () => {
         <Line
           data={chartData} 
           options={chartConfig} 
-          width={chartConfig.width} 
-          height={chartConfig.height} 
           className={styles.chart}
         />
       </div>
