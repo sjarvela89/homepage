@@ -85,7 +85,6 @@ const Photography: React.FC = () => {
               <Image
                 src={selectedImage}
                 alt="Selected"
-                style={getImageStyle()}
                 width={900}
                 height={700}
               />
