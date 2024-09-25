@@ -1,27 +1,27 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS } from 'chart.js'; // Import from chart.js directly
-import { ChartJSOrUndefined } from 'react-chartjs-2/dist/types'; // Import the correct type
+import { Line } from 'react-chartjs-2'; // Import the correct type
 import Link from 'next/link'; // Import Link for navigation
 import styles from './Dog.module.css'; // Use CSS module for styling
 import { chartData, chartConfig } from '../Components/ChartConfig'; // Adjust the import path
 import BackgroundImage from '../../../public/images/background.jpg'; // Import background image
 import DogImage from '../../../public/images/dog.jpg'; // Import dog image
 import Background from '../Components/Background';
+import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 
 const Dog = () => {
-  const chartRef = useRef<ChartJSOrUndefined<'line'>|ChartJS >(null); // Explicitly type the ref
+  Chart.register(ArcElement, Tooltip, Legend);
+  //const chartRef = useRef<ChartJSOrUndefined<'line'>>(null); // Explicitly type the ref
 
-  useEffect(() => {
+  /*useEffect(() => {
     // Ensure the chart is properly initialized and cleaned up
     return () => {
       if (chartRef.current) {
         chartRef.current.destroy();
       }
     };
-  }, []);
+  }, []);*/
 
   return (
     <div className={styles.backgroundContainer}>
@@ -39,12 +39,7 @@ const Dog = () => {
         <div className={styles.container}>
           <h1 className={styles.title}>Weight Development of Tomi</h1>
           <div className={styles.chartContainer}>
-            <Line
-              ref={chartRef}
-              data={chartData} 
-              options={chartConfig} 
-              className={styles.chart}
-            />
+            <Line data={chartData} options={chartConfig} className={styles.chart}></Line>
           </div>
           <div className={styles.dogImageContainer}>
             <Image 
