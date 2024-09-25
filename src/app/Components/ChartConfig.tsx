@@ -7,7 +7,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 // Chart Data and Configuration for react-chartjs-2
 export const chartData = {
-  labels: Array.from({ length: weights.length }, (_, i) => (i + 1).toString()), // Example labels (weeks)
+  labels: Array.from({ length: weights.length }, (_, i) => (i + 8).toString()), // Example labels (weeks)
   datasets: [
     {
       label: 'Weight',
@@ -39,7 +39,7 @@ export const chartConfig: ChartOptions<'line'> = {
   },
   scales: {
     x: {
-      beginAtZero: true,
+      beginAtZero: false,
       title: {
         display: true,
         text: 'Week',
