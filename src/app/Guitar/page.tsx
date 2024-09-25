@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Guitar.module.css'; // Import the CSS module
 import Link from 'next/link';
 import Image from 'next/image';
@@ -22,21 +22,25 @@ const Guitar: React.FC = () => {
 
   const playSound = (soundFile: string) => {
     // Stop the current sound if already playing
-    if (currentSound) {
-      stopSound();
-    }
+    stopSound();
 
     const sound = new Audio(soundFile);
     sound.play()
       .then(() => {
         console.log('Sound played successfully');
+        setCurrentSound(sound);
       })
       .catch(error => {
         console.error('Sound playback failed', error);
       });
-
-    setCurrentSound(sound);
   };
+
+  // Cleanup on component unmount
+  useEffect(() => {
+    return () => {
+      stopSound();
+    };
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -50,7 +54,7 @@ const Guitar: React.FC = () => {
         />
         <div className={styles.overlay} />
       </div>
-      <Background></Background>
+      <Background />
       <h1 className={styles.title}>Guitar Soundboard</h1>
       <button className={styles.button} onClick={() => playSound(guitar1Sound)}>
         Play Guitar Solo
