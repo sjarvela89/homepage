@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Line } from 'react-chartjs-2'; // Import the correct type
 import Link from 'next/link'; // Import Link for navigation
@@ -12,16 +12,6 @@ import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 
 const Dog = () => {
   Chart.register(ArcElement, Tooltip, Legend);
-  //const chartRef = useRef<ChartJSOrUndefined<'line'>>(null); // Explicitly type the ref
-
-  /*useEffect(() => {
-    // Ensure the chart is properly initialized and cleaned up
-    return () => {
-      if (chartRef.current) {
-        chartRef.current.destroy();
-      }
-    };
-  }, []);*/
 
   return (
     <div className={styles.backgroundContainer}>
@@ -55,6 +45,14 @@ const Dog = () => {
         <Link href="/" className="inline-block bg-[#3182ce] text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
           Home
         </Link>
+      </div>
+      <div className={styles.fciButtonContainer}>
+        <a
+          href="https://jalostus.kennelliitto.fi/frmKoira.aspx?RekNo=FI22234%2F24&R=58" 
+          className="inline-block bg-[#3182ce] text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+        >
+          FCI
+        </a>
       </div>
     </div>
   );
