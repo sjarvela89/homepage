@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS } from 'chart.js'; // Import from chart.js directly
+import { ChartJSOrUndefined } from 'react-chartjs-2/dist/types'; // Import the correct type
 import Link from 'next/link'; // Import Link for navigation
 import styles from './Dog.module.css'; // Use CSS module for styling
 import { chartData, chartConfig } from '../Components/ChartConfig'; // Adjust the import path
@@ -11,7 +12,7 @@ import DogImage from '../../../public/images/dog.jpg'; // Import dog image
 import Background from '../Components/Background';
 
 const Dog = () => {
-  const chartRef = useRef<ChartJS | null>(null); // Explicitly type the ref
+  const chartRef = useRef<ChartJSOrUndefined<'line'>|ChartJS >(null); // Explicitly type the ref
 
   useEffect(() => {
     // Ensure the chart is properly initialized and cleaned up
