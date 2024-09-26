@@ -5,10 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BackgroundImage from '../../../public/images/background.jpg';
 import Background from '../Components/Background';
+import WebRTCStreamer from '../Components/WebRTCStreamer';
 
 const Guitar: React.FC = () => {
   const [currentSound, setCurrentSound] = useState<HTMLAudioElement | null>(null);
-
   const guitar1Sound = "/sounds/guitar1.mp3"; // Ensure this path is correct
 
   const stopSound = () => {
@@ -56,6 +56,9 @@ const Guitar: React.FC = () => {
       </div>
       <Background />
       <h1 className={styles.title}>Guitar Soundboard</h1>
+      <div className={styles.videoContainer}>
+        <WebRTCStreamer />
+      </div>
       <button className={styles.button} onClick={() => playSound(guitar1Sound)}>
         Play Guitar Solo
       </button>

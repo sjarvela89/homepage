@@ -1,32 +1,74 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .button {
-    background-color: #007bff;
-    padding: 16px;
-    border-radius: 8px;
-    margin: 10px 0;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-    border: none;
-    width: 80%;
-    text-align: center;
-    z-index: 10;
-  }
-  
-  .stopButton {
-    background-color: #ff4d4d; /* Red color for the stop button */
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  position: relative; /* Ensure relative positioning for child elements */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white; /* Ensure title is visible on the background */
+  z-index: 1; /* Ensure title is above the overlay */
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.videoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #3182ce;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1; /* Ensure buttons are above the overlay */
+}
+
+.button:hover {
+  background-color: #2b6cb0;
+}
+
+.stopButton {
+  background-color: #e53e3e;
+}
+
+.stopButton:hover {
+  background-color: #c53030;
+}
