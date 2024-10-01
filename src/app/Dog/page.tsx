@@ -7,6 +7,11 @@ import styles from './Dog.module.css'; // Use CSS module for styling
 import { chartData, chartConfig } from '../Components/ChartConfig'; // Adjust the import path
 import BackgroundImage from '../../../public/images/background.jpg'; // Import background image
 import DogImage from '../../../public/images/dog.jpg'; // Import dog image
+import DogImage1 from '../../../public/images/dog1.jpeg';
+import DogImage2 from '../../../public/images/dog2.jpeg';
+import DogImage3 from '../../../public/images/dog3.jpeg';
+import DogImage4 from '../../../public/images/dog4.jpeg';
+import DogVideo from '../../../public/images/dogvideo.mp4';
 import Background from '../Components/Background';
 import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 
@@ -31,13 +36,56 @@ const Dog = () => {
           <div className={styles.chartContainer}>
             <Line data={chartData} options={chartConfig} className={styles.chart}></Line>
           </div>
-          <div className={styles.dogImageContainer}>
-            <Image 
-              src={DogImage} 
-              alt="Dog" 
-              fill
-              style={{ objectFit: 'contain' }}
-            />
+          <div className={styles.dogImagesRow}>
+            <div className={styles.dogImageContainer}>
+              <Image 
+                src={DogImage4} 
+                alt="Dog" 
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <div className={styles.dogImageContainer}>
+              <Image 
+                src={DogImage3} 
+                alt="Dog" 
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <div className={styles.dogImageContainer}>
+              <Image 
+                src={DogImage2} 
+                alt="Dog" 
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <div className={styles.dogVideoContainer}>
+              <video 
+                src={DogVideo} 
+                autoPlay 
+                muted 
+                loop 
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
+            </div>
+            <div className={styles.dogImageContainer}>
+              <Image 
+                src={DogImage1} 
+                alt="Dog" 
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <div className={styles.dogImageContainer}>
+              <Image 
+                src={DogImage} 
+                alt="Dog" 
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           </div>
         </div>
       </div>

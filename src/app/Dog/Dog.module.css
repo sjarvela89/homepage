@@ -1,4 +1,3 @@
-/* Dog.module.css */
 .backgroundContainer {
   position: relative;
   height: 100vh;
@@ -53,9 +52,15 @@
 
 .dogImageContainer {
   position: relative;
-  width: 100%;
-  height: 400px; /* Adjust the height as needed */
-  margin-top: 20px;
+  width: calc(20% - 16px); /* Adjust width to fit 5 images in a row with gap */
+  height: 350px;
+  margin-bottom: 20px;
+}
+
+.dogImagesRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .homeButtonContainer {
@@ -66,8 +71,23 @@
 }
 
 .fciButtonContainer {
-position: absolute;
-top: 20px;
-right: 20px;
-z-index: 10;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.dogVideoContainer {
+  position: relative;
+  width: calc(20% - 16px); /* Adjust width to fit 5 images in a row with gap */
+  height: 350px; /* Match the height of the image containers */
+}
+
+.dogVideoContainer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
