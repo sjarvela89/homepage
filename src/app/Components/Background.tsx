@@ -8,7 +8,7 @@ const Background: React.FC = () => {
         className="w-full h-full object-cover object-center"
       />
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-400  opacity-80"></div>
+      {/*<div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-400  opacity-80"></div>*/}
     </div>
   );
 };
