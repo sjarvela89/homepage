@@ -35,6 +35,7 @@
     font-size: 2rem;
     font-weight: bold;
     color: white;
+    margin-top: 40px;
     margin-bottom: 24px;
     z-index: 10;
   }
@@ -109,4 +110,11 @@
   
   .rotationButton:hover {
     background-color: #0056b3;
+  }
+
+  .homeButtonContainer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
   }

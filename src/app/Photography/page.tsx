@@ -103,7 +103,7 @@ const Photography: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="absolute top-4 left-4 z-10">
+      <div className={styles.homeButtonContainer}>
         <Link href="/" className="inline-block bg-[#3182ce] text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
           Home
         </Link>
