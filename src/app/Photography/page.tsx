@@ -28,7 +28,7 @@ const Photography: React.FC = () => {
       width: imageWidth,
       height: imageHeight,
       transform: `rotate(${rotation}deg)`,
-      objectFit: 'contain', // Ensure image maintains aspect ratio
+      objectFit: 'contain' as 'contain', // Explicit type assertion
     };
   };
 
@@ -87,6 +87,7 @@ const Photography: React.FC = () => {
                 alt="Selected"
                 width={900}
                 height={700}
+                style={getImageStyle()} // Use the getImageStyle function
               />
             </div>
 
