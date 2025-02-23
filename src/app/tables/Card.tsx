@@ -2,6 +2,7 @@ import DogImage from '../../../public/images/dog.jpg';
 import PhotographyImage from '../../../public/images/photography.jpg';
 import ProfileImage from '../../../public/images/profile.jpg';
 import GuitarImage from '../../../public/images/guitar.jpeg'
+import LineImage from '../../../public/images/Line.png';
 
 interface CardData {
   title: string;
@@ -34,6 +35,12 @@ const cardData: CardData[] = [
     subtitle: "Some solo to listen.",
     imageSource: GuitarImage.src, // External image URL
     screen: "/Guitar", // Replace with Next.js routes
+  },
+  {
+    title: "TCO Calculating",
+    subtitle: "Example TCO calculations",
+    imageSource: LineImage.src,
+    screen: "/TCOCalculating"
   },
 ];
 

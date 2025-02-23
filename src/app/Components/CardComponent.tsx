@@ -18,7 +18,7 @@ const CardComponent: React.FC<CardProps> = ({ title, subtitle, imageSource, onPr
           className={styles.image} 
           width={500}
           height={300} 
-          style={{ objectFit: title === "Dog" || title === "Guitar"  ? "contain" : "cover" }} // Use inline style for object-fit
+          style={{ objectFit: title === "Dog" || title === "Guitar" || "TCO Calculating" ? "contain" : "cover" }} // Use inline style for object-fit
         />
       </div>
       <h2 className={styles.cardTitle}>{title}</h2>
