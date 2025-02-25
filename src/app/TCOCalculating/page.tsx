@@ -176,29 +176,29 @@ const TCOCalculating: React.FC = () => {
       <tbody>
         <tr>
           <td className={styles.costCell}>Servers Amount 
-            <input type="number" value={serverAmount || ''} onChange={(e) => setServerAmount(Number(e.target.value))} className={styles.fullWidth} />
+            <input type="number" placeholder="Enter amount of servers"  value={serverAmount || ''} onChange={(e) => setServerAmount(Number(e.target.value))} className={styles.fullWidth} />
           </td>
           <td className={styles.costCell}>Annual Expenses 
-            <input type="number" value={annualExpences || ''} onChange={(e) => setAnnualExpences(Number(e.target.value))} className={styles.fullWidth} />
+            <input type="number" placeholder="Enter annual expenses"  value={annualExpences || ''} onChange={(e) => setAnnualExpences(Number(e.target.value))} className={styles.fullWidth} />
           </td>
           <td className={styles.costCell}>Migration Costs 
-            <input type="number" value={migrationCosts || ''} onChange={(e) => setMigrationCosts(Number(e.target.value))} className={styles.fullWidth} />
+            <input type="number" placeholder="Enter migration costs" value={migrationCosts || ''} onChange={(e) => setMigrationCosts(Number(e.target.value))} className={styles.fullWidth} />
           </td>
         </tr>
         <tr>
           <td className={styles.costCell}>Cost per Server 
-            <input type="number" value={costPerServer || ''} onChange={(e) => setCostPerServer(Number(e.target.value))} className={styles.fullWidth} />
+            <input type="number"  placeholder="Enter average cost/server"  value={costPerServer || ''} onChange={(e) => setCostPerServer(Number(e.target.value))} className={styles.fullWidth} />
           </td>
           <td className={styles.costCell}>Intangible Costs 
-            <input type="number" value={intangibleCosts || ''} onChange={(e) => setIntangibleCosts(Number(e.target.value))} className={styles.fullWidth} />
+            <input type="number" placeholder="Enter intangible costs"  value={intangibleCosts || ''} onChange={(e) => setIntangibleCosts(Number(e.target.value))} className={styles.fullWidth} />
           </td>
           <td className={styles.costCell}>Cloud Monthly Costs 
-            <input type="number" value={cloudAnnualCosts || ''} onChange={(e) => setCloudAnnualCosts(Number(e.target.value))} className={styles.fullWidth} />
+            <input type="number" placeholder="Enter Cloud Monthly Costs"  value={cloudAnnualCosts || ''} onChange={(e) => setCloudAnnualCosts(Number(e.target.value))} className={styles.fullWidth} />
           </td>
         </tr>
         <tr>
           <td className={styles.costCell}>Other Costs 
-            <input type="number" value={otherCosts || ''} onChange={(e) => setOtherCosts(Number(e.target.value))} className={styles.fullWidth} />
+            <input type="number" placeholder="Enter other costs" value={otherCosts || ''} onChange={(e) => setOtherCosts(Number(e.target.value))} className={styles.fullWidth} />
           </td>
           <td className={styles.costCell}></td>
           <td className={styles.costCell}></td>
