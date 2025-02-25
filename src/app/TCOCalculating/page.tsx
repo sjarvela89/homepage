@@ -211,6 +211,10 @@ const TCOCalculating: React.FC = () => {
               value={intangibleCosts || ''}
               onChange={(e) => handleNumberInput(e, setIntangibleCosts)} 
             />
+                        <p className={styles.calculationResult}>
+              Monthly expenses: ${(intangibleCosts+annualExpences/12).toLocaleString()}
+            </p>
+
           </div>
 
           <div className={styles.section}>
@@ -226,7 +230,7 @@ const TCOCalculating: React.FC = () => {
             <input 
               type="number" 
               className={styles.inputField}
-              placeholder="Enter Cloud Annual Costs" 
+              placeholder="Enter Cloud Monthly Costs" 
               value={cloudAnnualCosts || ''}
               onChange={(e) => handleNumberInput(e, setCloudAnnualCosts)} 
             />
