@@ -6,7 +6,6 @@ import { images } from '../tables/ImageData';
 import BackgroundImage from '../../../public/images/background.jpg';
 import Background from '../Components/Background';
 import Link from 'next/link';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
