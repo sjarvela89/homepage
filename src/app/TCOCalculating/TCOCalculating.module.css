@@ -195,6 +195,44 @@
     gap: 16px;
     z-index: 10;
     width: 100%;
-    max-width: 400px;
     margin: 0 auto;
   }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+    .columnsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+
+    .costTable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    .costHeader {
+      padding: 16px;
+      border-left: 1px solid #e5e7eb;
+      border-right: 1px solid #e5e7eb;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    
+    .costCell {
+      padding: 16px;
+      border-left: 1px solid #e5e7eb;
+      border-right: 1px solid #e5e7eb;
+    }
+    
+    .fullWidth {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }

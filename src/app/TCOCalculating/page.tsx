@@ -6,6 +6,7 @@ import { images } from '../tables/ImageData';
 import BackgroundImage from '../../../public/images/background.jpg';
 import Background from '../Components/Background';
 import Link from 'next/link';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -166,76 +167,54 @@ const TCOCalculating: React.FC = () => {
         </p>
 
         <div className={styles.gallery}>
-          <div className={styles.section}>
-            <h1 className={styles.titlethree}>On premises costs</h1>
-            <h2 className={styles.titletwo}>Infrastructure costs capital expense calculation</h2>
-            <input 
-              type="number" 
-              className={styles.inputField}
-              placeholder="Enter amount of servers" 
-              value={serverAmount || ''}
-              onChange={(e) => handleNumberInput(e, setServerAmount)} 
-            />
-            <input 
-              type="number" 
-              className={styles.inputField}
-              placeholder="Enter average cost/server" 
-              value={costPerServer || ''}
-              onChange={(e) => handleNumberInput(e, setCostPerServer)}
-            />
-            <input 
-              type="number" 
-              className={styles.inputField}
-              placeholder="Enter other costs" 
-              value={otherCosts || ''}
-              onChange={(e) => handleNumberInput(e, setOtherCosts)}
-            />
-            <p className={styles.calculationResult}>
-              Capital expenses: ${(serverAmount * costPerServer + otherCosts).toLocaleString()}
-            </p>
-
-            <h2 className={styles.titletwo}>Annual operating expenses</h2>
-            <input 
-              type="number" 
-              className={styles.inputField}
-              placeholder="Enter annual expenses" 
-              value={annualExpences || ''}
-              onChange={(e) => handleNumberInput(e, setAnnualExpences)} 
-            />
-
-            <h2 className={styles.titletwo}>Intangible costs per month</h2>
-            <input 
-              type="number" 
-              className={styles.inputField}
-              placeholder="Enter intangible costs" 
-              value={intangibleCosts || ''}
-              onChange={(e) => handleNumberInput(e, setIntangibleCosts)} 
-            />
-                        <p className={styles.calculationResult}>
-              Monthly expenses: ${(intangibleCosts+annualExpences/12).toLocaleString()}
-            </p>
-
-          </div>
-
-          <div className={styles.section}>
-            <h1 className={styles.titlethree}>Cloud costs</h1>
-            <h2 className={styles.titletwo}>Migration costs & Cloud Monthly Costs</h2>
-            <input 
-              type="number" 
-              className={styles.inputField}
-              placeholder="Enter migration costs" 
-              value={migrationCosts || ''}
-              onChange={(e) => handleNumberInput(e, setMigrationCosts)} 
-            />
-            <input 
-              type="number" 
-              className={styles.inputField}
-              placeholder="Enter Cloud Monthly Costs" 
-              value={cloudAnnualCosts || ''}
-              onChange={(e) => handleNumberInput(e, setCloudAnnualCosts)} 
-            />
-          </div>
-
+        <table className={styles.costTable}>
+      <thead>
+        <tr>
+          <th className={styles.costHeader} colSpan={2}>On-Premises Costs</th>
+          <th className={styles.costHeader}>Cloud Costs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className={styles.costCell}>Servers Amount 
+            <input type="number" value={serverAmount || ''} onChange={(e) => setServerAmount(Number(e.target.value))} className={styles.fullWidth} />
+          </td>
+          <td className={styles.costCell}>Annual Expenses 
+            <input type="number" value={annualExpences || ''} onChange={(e) => setAnnualExpences(Number(e.target.value))} className={styles.fullWidth} />
+          </td>
+          <td className={styles.costCell}>Migration Costs 
+            <input type="number" value={migrationCosts || ''} onChange={(e) => setMigrationCosts(Number(e.target.value))} className={styles.fullWidth} />
+          </td>
+        </tr>
+        <tr>
+          <td className={styles.costCell}>Cost per Server 
+            <input type="number" value={costPerServer || ''} onChange={(e) => setCostPerServer(Number(e.target.value))} className={styles.fullWidth} />
+          </td>
+          <td className={styles.costCell}>Intangible Costs 
+            <input type="number" value={intangibleCosts || ''} onChange={(e) => setIntangibleCosts(Number(e.target.value))} className={styles.fullWidth} />
+          </td>
+          <td className={styles.costCell}>Cloud Monthly Costs 
+            <input type="number" value={cloudAnnualCosts || ''} onChange={(e) => setCloudAnnualCosts(Number(e.target.value))} className={styles.fullWidth} />
+          </td>
+        </tr>
+        <tr>
+          <td className={styles.costCell}>Other Costs 
+            <input type="number" value={otherCosts || ''} onChange={(e) => setOtherCosts(Number(e.target.value))} className={styles.fullWidth} />
+          </td>
+          <td className={styles.costCell}></td>
+          <td className={styles.costCell}></td>
+        </tr>
+        <tr>
+          <td className={styles.costCell}><p className={styles.calculationResult}>
+              Capital expenses: {(serverAmount * costPerServer + otherCosts).toLocaleString()}€
+            </p></td>
+          <td className={styles.costCell}><p className={styles.calculationResult}>
+              Monthly expenses: {(intangibleCosts+annualExpences/12).toLocaleString()}€
+            </p></td>
+          <td className={styles.costCell}></td>
+        </tr>
+      </tbody>
+    </table>
           <div className={styles.chartContainer}>
             <h2 className={styles.titletwo}>Chart</h2>
             <Line data={chartData} options={chartOptions} className={styles.chart}></Line>
