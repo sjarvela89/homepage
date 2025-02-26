@@ -236,3 +236,19 @@
       padding: 8px;
       box-sizing: border-box;
     }
+
+    .rotateMessage {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 1.5rem;
+      z-index: 9999;
+    }

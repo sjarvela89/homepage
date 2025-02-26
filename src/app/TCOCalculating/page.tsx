@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './TCOCalculating.module.css';
 import { images } from '../tables/ImageData';
@@ -37,6 +37,29 @@ const TCOCalculating: React.FC = () => {
   const [intangibleCosts, setIntangibleCosts] = useState<number>(0);
   const [migrationCosts, setMigrationCosts] = useState<number>(0);
   const [cloudAnnualCosts, setCloudAnnualCosts] = useState<number>(0);
+  const [showRotateMessage, setShowRotateMessage] = useState(false);
+
+
+  useEffect(() => {
+    const isMobileDevice = () => {
+      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    };
+
+    const handleOrientationChange = () => {
+      const isPortrait = window.innerHeight > window.innerWidth;
+      setShowRotateMessage(isMobileDevice() && isPortrait);
+    };
+
+    handleOrientationChange(); // Run on component mount
+    window.addEventListener("resize", handleOrientationChange);
+    window.addEventListener("orientationchange", handleOrientationChange);
+
+    return () => {
+      window.removeEventListener("resize", handleOrientationChange);
+      window.removeEventListener("orientationchange", handleOrientationChange);
+    };
+  }, []);
+
 
   const handleNumberInput = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -146,6 +169,11 @@ const TCOCalculating: React.FC = () => {
 
   return (
     <div className={styles.backgroundContainer}>
+      {showRotateMessage && (
+        <div className={styles.rotateMessage}>
+          <p>Please rotate your device to landscape mode.</p>
+        </div>
+      )}
       <div className={styles.backgroundImage}>
         <Image
           src={BackgroundImage}
